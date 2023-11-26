@@ -3,6 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\LayananController;
+use App\Http\Controllers\LoginController;
+
+use App\Models\Layanan;
+use App\Models\Reservasi;
+use App\Models\Login;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +21,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/dashboard', [LoginController::class, 'dashboard'])->middleware('auth');
+Route::get('/error', [LoginController::class, 'error']);
+
+Route::get('/getReservasi', [ReservasiController::class, 'getReservasi']);
+
+Route::post('/addReservasi', [ReservasiController::class, 'addReservasi']);
+
+Route::get('/getLayanan', [LayananController::class, 'getLayanan']);
+
+Route::post('/addLayanan', [LayananController::class, 'addLayanan']);
+
+Route::post('/login', [LoginController::class, 'getLogin']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::post('/addAdmin', [LoginController::class, 'addUser']);
