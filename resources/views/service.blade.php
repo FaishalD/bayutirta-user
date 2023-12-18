@@ -22,177 +22,52 @@
     </div>
   </section>
   <!-- Part -->
+  
   <section class="part">
     <div class="container">
       <div class="row">
-        <div class="col-xl-4">
-          <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
-            <div class="part-card">
-              <div class="image">
-                <img src="{{ url('images/service2.png') }}" alt="part">
-              </div>
-              <div class="body">
-                <h5 class="title font-jakarta">Service Mesin Handphone</h5>
-                <p class="text">Kamera, kelistrikan, dan lainnya</p>
-              </div>
-              <div class="logo">
-                <div class="brand">
-                  <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/samsung.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/oppo.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/vivo.png') }}" alt="brand">
-                </div>
-              </div>
-            </div>
-          </a>
         
-        </div>
-        <div class="col-xl-4">
-          <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
-            <div class="part-card">
-              <div class="image">
-                <img src="{{ url('images/service1.png') }}" alt="part">
-              </div>
-              <div class="body">
-                <h5 class="title font-jakarta">Service Layar LCD</h5>
-                <p class="text">Layar LCD, layar dalam, dan lainnya</p>
-              </div>
-              <div class="logo">
-                <div class="brand">
-                  <img src="{{ url('images/xiaomi.png') }}" alt="brand">
+          @if (isset($layanan))
+            @foreach ($layanan as $item)
+            <div class="col-xl-4">
+                  <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
+                    <div class="part-card">
+                      <div class="image">
+                        <img src="{{ url('images/service2.png') }}" alt="part">
+                      </div>
+                      <div class="body">
+                        <h5 class="title font-jakarta">{{$item->nama_layanan}}</h5>
+                        <p class="text">{{$item->keterangan}}</p>
+                      </div>
+                      <div class="logo">
+                        <div class="brand">
+                          <img src="{{ url('images/xiaomi.png') }}" alt="brand">
+                        </div>
+                        <div class="brand">
+                          <img src="{{ url('images/samsung.png') }}" alt="brand">
+                        </div>
+                        <div class="brand">
+                          <img src="{{ url('images/oppo.png') }}" alt="brand">
+                        </div>
+                        <div class="brand">
+                          <img src="{{ url('images/vivo.png') }}" alt="brand">
+                        </div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-                <div class="brand">
-                  <img src="{{ url('images/samsung.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/oppo.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/vivo.png') }}" alt="brand">
-                </div>
-              </div>
+            @endforeach
+        @else
+            <div class="picture">
+                <img src="/img/ALT 4.png" alt="noservice">
             </div>
-          </a>
-         
-        </div>
-        <div class="col-xl-4">
-          <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
-            <div class="part-card">
-              <div class="image">
-                <img src="{{ url('images/service3.png') }}" alt="part">
-              </div>
-              <div class="body">
-                <h5 class="title font-jakarta">Service Baterai</h5>
-                <p class="text">Ganti, perbaiki baterai dan lainnya</p>
-              </div>
-              <div class="logo">
-                <div class="brand">
-                  <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/samsung.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/oppo.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/vivo.png') }}" alt="brand">
-                </div>
-              </div>
+            <div class="message text-center">
+                <h3 class="fw-bold">Belum ada layanan yang dibuat</h3>
+                <p>Buat dan atur layanan yang bisa diakses pelangganmu!</p>
+                <p>Klik button “Tambah Layanan” di atas kanan halaman ini</p>
             </div>
-          </a>
-       
-        </div>
-        <div class="col-xl-4">
-          <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
-            <div class="part-card">
-              <div class="image">
-                <img src="{{ url('images/service3.png') }}" alt="part">
-              </div>
-              <div class="body">
-                <h5 class="title font-jakarta">Service Baterai</h5>
-                <p class="text">Ganti, perbaiki baterai dan lainnya</p>
-              </div>
-              <div class="logo">
-                <div class="brand">
-                  <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/samsung.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/oppo.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/vivo.png') }}" alt="brand">
-                </div>
-              </div>
-            </div>
-          </a>
-         
-        </div>
-        <div class="col-xl-4">
-          <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
-            <div class="part-card">
-              <div class="image">
-                <img src="{{ url('images/service3.png') }}" alt="part">
-              </div>
-              <div class="body">
-                <h5 class="title font-jakarta">Service Baterai</h5>
-                <p class="text">Ganti, perbaiki baterai dan lainnya</p>
-              </div>
-              <div class="logo">
-                <div class="brand">
-                  <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/samsung.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/oppo.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/vivo.png') }}" alt="brand">
-                </div>
-              </div>
-            </div>
-          </a>
-         
-        </div>
-        <div class="col-xl-4">
-          <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
-            <div class="part-card">
-              <div class="image">
-                <img src="{{ url('images/service3.png') }}" alt="part">
-              </div>
-              <div class="body">
-                <h5 class="title font-jakarta">Service Baterai</h5>
-                <p class="text">Ganti, perbaiki baterai dan lainnya</p>
-              </div>
-              <div class="logo">
-                <div class="brand">
-                  <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/samsung.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/oppo.png') }}" alt="brand">
-                </div>
-                <div class="brand">
-                  <img src="{{ url('images/vivo.png') }}" alt="brand">
-                </div>
-              </div>
-            </div>
-          </a>
+        @endif
         
-        </div>
       </div>
     </div>
   </section>
