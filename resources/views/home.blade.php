@@ -199,86 +199,49 @@
         <h2 class="font-jakarta">Layanan Kami</h2>
       </div>
       <div class="row">
-        <div class="col-xl-4">
-          <div class="part-card">
-            <div class="image">
-              <img src="{{ url('images/service2.png') }}" alt="part">
+        @if (isset($layanan))
+            @foreach ($layanan as $item)
+            <div class="col-xl-4">
+                  <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
+                    <div class="part-card">
+                      <div class="image">
+                        <img src="{{ url('images/service2.png') }}" alt="part">
+                      </div>
+                      <div class="body">
+                        <h5 class="title font-jakarta">{{$item->nama_layanan}}</h5>
+                        <p class="text">{{$item->keterangan}}</p>
+                      </div>
+                      <div class="logo">
+                        <div class="brand">
+                          <img src="{{ url('images/xiaomi.png') }}" alt="brand">
+                        </div>
+                        <div class="brand">
+                          <img src="{{ url('images/samsung.png') }}" alt="brand">
+                        </div>
+                        <div class="brand">
+                          <img src="{{ url('images/oppo.png') }}" alt="brand">
+                        </div>
+                        <div class="brand">
+                          <img src="{{ url('images/vivo.png') }}" alt="brand">
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+            @endforeach
+        @else
+            <div class="picture">
+                <img src="/img/ALT 4.png" alt="noservice">
             </div>
-            <div class="body">
-              <h5 class="title font-jakarta">Service Mesin Handphone</h5>
-              <p class="text">Kamera, kelistrikan, dan lainnya</p>
+            <div class="message text-center">
+                <h3 class="fw-bold">Belum ada layanan yang dibuat</h3>
+                <p>Buat dan atur layanan yang bisa diakses pelangganmu!</p>
+                <p>Klik button “Tambah Layanan” di atas kanan halaman ini</p>
             </div>
-            <div class="logo">
-              <div class="brand">
-                <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/samsung.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/oppo.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/vivo.png') }}" alt="brand">
-              </div>
-            </div>
-
-          </div>
+        @endif
+        <div class="devices-button">
+          <button>Selengkapnya</button>
         </div>
-
-        <div class="col-xl-4">
-          <div class="part-card">
-            <div class="image">
-              <img src="{{ url('images/service1.png') }}" alt="part">
-            </div>
-            <div class="body">
-              <h5 class="title font-jakarta">Service Baterai</h5>
-              <p class="text">Ganti, perbaiki baterai dan lainnya</p>
-            </div>
-            <div class="logo">
-              <div class="brand">
-                <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/samsung.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/oppo.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/vivo.png') }}" alt="brand">
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-xl-4">
-          <div class="part-card">
-            <div class="image">
-              <img src="{{ url('images/service3.png') }}" alt="part">
-            </div>
-            <div class="body">
-              <h5 class="title font-jakarta">Service Layar LCD</h5>
-              <p class="text">Layar LCD, layar dalam, dan lainnya</p>
-            </div>
-            <div class="logo">
-              <div class="brand">
-                <img src="{{ url('images/xiaomi.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/samsung.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/oppo.png') }}" alt="brand">
-              </div>
-              <div class="brand">
-                <img src="{{ url('images/vivo.png') }}" alt="brand">
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <button>Selengkapnya</button>
 
       </div>
     </div>
@@ -415,12 +378,27 @@
       </div>
       <div class="row justify-content-xl-center text-center">
         <div class="testimonial-carousel owl-carousel owl-theme">
+          @if (isset($ulasan))
+          {{-- {{count($ulasan)}} --}}
+          {{-- {{print_r($ulasan)}} --}}
+          {{-- {{dd($ulasan)}} --}}
+          @foreach ($ulasan as $item)
+          
+          {{-- @foreach ($item as $a)
+          {{dd($a)}}
+          <br>
+          <h1>batass</h1>
+          @endforeach --}}
+          {{-- {{print_r($item)}} --}}
+          {{-- <br>
+          <h1>batass</h1> --}}
+          {{-- {{$item->rating}} --}}
+          {{-- {{$item->author_name}}
+          {{$item->text}}
+          {{$item->created_at}} --}}
           <div class="item text-start">
-            <span class="font-jakarta title">It’s just incredible!</span>
-            <p class="font-jakarta desc">It’s just 1 month since I’m using Spend.In to manage my business expenses,
-              but
-              the result is very
-              satisfying! My business finance now more neat than before, thanks to Spend.In!</p>
+            <span class="font-jakarta title">bintang {{$item->rating}}</span>
+            <p class="font-jakarta desc">{{$item->text}}</p>
             <hr>
 
             <div class="profile">
@@ -428,12 +406,24 @@
                 <img src="{{url('images/profile1.png') }}" alt="profile">
               </div>
               <div class="position">
-                <h5 class="font-jakarta">Jimmy Bartney</h5>
-                <p class="font-jakarta">Product Manager at Picko Lab</p>
+                <h5 class="font-jakarta">{{$item->author_name}}</h5>
+                <p class="font-jakarta">{{$item->created_at}}</p>
               </div>
             </div>
           </div>
-          <div class="item text-start">
+          @endforeach
+        @else
+        <div class="picture">
+                <img src="/img/ALT 4.png" alt="noservice">
+            </div>
+            <div class="message text-center">
+                <h3 class="fw-bold">Belum ada layanan yang dibuat</h3>
+                <p>Buat dan atur layanan yang bisa diakses pelangganmu!</p>
+                <p>Klik button “Tambah Layanan” di atas kanan halaman ini</p>
+            </div>
+        @endif
+          
+          {{-- <div class="item text-start">
             <span class="font-jakarta title">Satisfied User Here!</span>
             <p class="font-jakarta desc">Never thought that with Spend.In managing my business expenses is so easy!
               Been using this platform for 3 months and still counting!</p>
@@ -464,7 +454,7 @@
                 <p class="font-jakarta">Finance Manager at Mangan</p>
               </div>
             </div>
-          </div>
+          </div> --}}
 
         </div>
       </div>
@@ -558,71 +548,37 @@
       </div>
       <div class="devices-item">
         <div class="row">
+          @if (isset($artikel))
+          @foreach ($artikel as $item)
           <div class="col-xl-4">
-            <div class="card border-0 ">
-              <img src="{{ url('images/devices1.png') }}" class="card-img-top" alt="devices">
-              <div class="card-body p-0">
-                <h5 class="card-title font-jakarta">Merawat HP agar Awet</h5>
-                <p class="card-text font-jakarta">Handphone menjadi alat yang wajib untuk dibawa kemana mana untuk
-                  saat ini,
-                  maka
-                  dari itu per...</p>
+          <a href="{{ url('/articledetail') }}" class="text-decoration-none">  <div class="card border-0 ">
+            <img src="{{ url('images/devices1.png') }}" class="card-img-top" alt="devices">
+            <div class="card-body p-0">
+              <h5 class="card-title font-jakarta">{{$item->judul}}</h5>
+              <p class="card-text font-jakarta">{{$item->isi}}</p>
+            </div>
+            <div class="card-profile">
+              <div class="image">
+                <img src="{{ url('images/profiledev1.png') }}" alt="profile">
               </div>
-              <div class="card-profile">
-                <div class="image">
-                  <img src="{{ url('images/profiledev1.png') }}" class="card-img-top" alt="devices">
-              </div>
-                <div class="position">
-                  <h5>Ralph Edwards</h5>
-                  <p>5 min read</p>
-                </div>
+              <div class="position">
+                <h5>{{$item->nama_penulis}}</h5>
+                <p>{{$item->title_penulis}}</p>
               </div>
             </div>
+          </div></a>
           </div>
-          <div class="col-xl-4">
-            <div class="card border-0 ">
-              <img src="{{ url('images/devices2.png') }}" class="card-img-top" alt="devices">
-              <div class="card-body p-0">
-                <h5 class="card-title font-jakarta">Terhubung dengan HP Off</h5>
-                <p class="card-text font-jakarta">Handphone menjadi alat yang wajib untuk dibawa kemana mana untuk
-                  saat ini,
-                  maka
-                  dari itu per...</p>
-              </div>
-              <div class="card-profile">
-                <div class="image">
-                  <img src="{{ url('images/profiledev1.png') }}" alt="profile">
-                </div>
-                <div class="position">
-                  <h5>Ralph Edwards</h5>
-                  <p>5 min read</p>
-                </div>
-              </div>
+          @endforeach
+        @else
+        <div class="picture">
+                <img src="/img/ALT 4.png" alt="noservice">
             </div>
-          </div>
-          <div class="col-xl-4">
-            <div class="card border-0 ">
-              <img src="{{ url('images/devices3.png') }}" class="card-img-top" alt="devices">
-              <div class="card-body p-0">
-                <h5 class="card-title font-jakarta">Merawat HP agar Awet</h5>
-                <p class="card-text font-jakarta">Handphone menjadi alat yang wajib untuk dibawa kemana mana untuk
-                  saat ini,
-                  maka
-                  dari itu per...</p>
-              </div>
-              <div class="card-profile">
-                <div class="image">
-                  <img src="{{ url('images/profiledev1.png') }}" alt="profile">
-                </div>
-                <div class="position">
-                  <h5>Ralph Edwards</h5>
-                  <p>5 min read</p>
-                </div>
-              </div>
+            <div class="message text-center">
+                <h3 class="fw-bold">Belum ada layanan yang dibuat</h3>
+                <p>Buat dan atur layanan yang bisa diakses pelangganmu!</p>
+                <p>Klik button “Tambah Layanan” di atas kanan halaman ini</p>
             </div>
-          </div>
-
-        </div>
+        @endif
         <div class="devices-button">
           <button>Selengkapnya</button>
         </div>
@@ -653,19 +609,19 @@
             <div class="form mt-xl-4">
               <label for="name">Nomor WhatsApp <span>*</span></label>
               <div class="input">
-                <input type="text" name="name" placeholder="Masukkan nomor whatsapp kamu">
+                <input type="text" name="no_telp" placeholder="Masukkan nomor whatsapp kamu">
               </div>
             </div>
             <div class="form mt-xl-4">
               <label for="name">Merk HP <span>*</span></label>
               <div class="input">
-                <input type="text" name="name" placeholder="Tulis merk HP kamu">
+                <input type="text" name="merk_hp" placeholder="Tulis merk HP kamu">
               </div>
             </div>
             <div class="form mt-xl-4">
               <label for="name">Deskripsikan Kasus <span>*</span></label>
               <div class="input">
-                <textarea name="" id="" cols="10" rows="5" placeholder="Ceritakan keluhan Handphone"></textarea>
+                <textarea name="keterangan" id="" cols="10" rows="5" placeholder="Ceritakan keluhan Handphone"></textarea>
               </div>
             </div>
             <div class="form-file mt-xl-4">
