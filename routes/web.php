@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UlasanController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,7 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [Controller::class, 'index']);
 Route::get('/service', [ServiceController::class, 'index']);
 Route::get('/servicedetail', [ServiceController::class, 'serviceDetail']);
 Route::get('/article', [ArticleController::class, 'index']);
