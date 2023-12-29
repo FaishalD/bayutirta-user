@@ -23,7 +23,7 @@
 <body>
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand font-jakarta" href="#"><img src="{{ url('images/logo.png') }}" alt="logo">Bayu Tirta</a>
+      <a class="navbar-brand font-jakarta nav-link" href="/ "><img src="{{ url('images/logo.png') }}" alt="logo">Bayu Tirta</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,6 @@
             <a class="nav-link" href="{{ url('/article') }}">Artikel</a>
           </li>
         </ul>
-        <button class="ms-auto" ><a href="/#consultation">Book Konsultasi</a></button>
       </div>
     </div>
   </nav>
@@ -113,7 +112,7 @@
 
               <div class="desc">
                 <h5>Email</h5>
-                <p>unreal@outlook.com</p>
+                <p>admin@bayutirta.com</p>
               </div>
             </div>
           </div>
@@ -130,7 +129,7 @@
 
               <div class="desc">
                 <h5>Alamat</h5>
-                <p>706 Campfire Ave. Meriden, CT 06450</p>
+                <p>Malang Raya</p>
               </div>
             </div>
           </div>
@@ -139,18 +138,9 @@
 
       <div class="footer-copyright">
         <div class="row justify-content-xl-between">
-          <div class="col-xl-6">
-            <div class="navigation">
-              <p>About us</p>
-              <p>Contact</p>
-              <p>Privacy policy</p>
-              <p>Sitemap</p>
-              <p>Terms of Use</p>
-            </div>
-          </div>
           <div class="col-xl-3">
             <div class="copyright">
-              <p>© 2000-2021, All Rights Reserved</p>
+              <p>© 2023, All Rights Reserved</p>
             </div>
           </div>
         </div>
