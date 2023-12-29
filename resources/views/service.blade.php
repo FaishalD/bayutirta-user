@@ -85,7 +85,7 @@
                   layanan kami!</p>
               </div>
               <div class="button">
-                <button><a href="{{ url('/#consultation') }}" class="text-decoration-none text-dark">Hubungi Kami</a></button>
+                <button><a href="https://wa.me/6282257423118?text=Halo%20bro%20aku%20kate%20konsultasi" class="text-decoration-none text-dark">Hubungi Kami</a></button>
               </div>
             </div>
           </div>
