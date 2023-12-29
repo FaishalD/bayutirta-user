@@ -30,7 +30,7 @@
           @if (isset($layanan))
             @foreach ($layanan as $item)
             <div class="col-xl-4">
-                  <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
+                  <a href="{{ url("/servicedetail/$item->id_layanan") }}" class="text-decoration-none">
                     <div class="part-card">
                       <div class="image">
                         <img src="{{ url('images/service2.png') }}" alt="part">

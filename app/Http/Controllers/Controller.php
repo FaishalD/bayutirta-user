@@ -19,7 +19,7 @@ class Controller extends BaseController
 {
     public function index()
     {
-        $artikel = Artikel::all();
+        $artikel = Artikel::all()->take(3);
         $ulasan = Ulasan::all();
         $layanans = Layanan::all();
         // return response()->json([

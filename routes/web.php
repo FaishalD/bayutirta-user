@@ -18,6 +18,6 @@ use App\Http\Controllers\Controller;
 
 Route::get('/', [Controller::class, 'index']);
 Route::get('/service', [ServiceController::class, 'index']);
-Route::get('/servicedetail', [ServiceController::class, 'serviceDetail']);
+Route::get('/servicedetail/{id}', [ServiceController::class, 'serviceDetail']);
 Route::get('/article', [ArticleController::class, 'index']);
-Route::get('/articledetail', [ArticleController::class, 'articleDetail']);
+Route::get('/articledetail/{id}', [ArticleController::class, 'articleDetail']);

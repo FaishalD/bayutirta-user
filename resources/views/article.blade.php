@@ -29,8 +29,8 @@
           @if (isset($artikel))
           @foreach ($artikel as $item)
           <div class="col-xl-4">
-          <a href="{{ url('/articledetail') }}" class="text-decoration-none">  <div class="card border-0 ">
-            <img src="{{ url('images/devices1.png') }}" class="card-img-top" alt="devices">
+          <a href="{{ url("/articledetail/$item->id_artikel") }}" class="text-decoration-none">  <div class="card border-0 ">
+            <img src="{{ url("https://admin.bayutirta.masuk.id/public/images/$item->foto") }}" class="card-img-top" alt="devices">
             <div class="card-body p-0">
               <h5 class="card-title font-jakarta">{{$item->judul}}</h5>
               <p class="card-text font-jakarta">{{$item->isi}}</p>
@@ -184,7 +184,7 @@
                   layanan kami!</p>
               </div>
               <div class="button">
-                <button>Hubungi Kami</button>
+                <button><a href="https://wa.me/6282257423118?text=Halo%20bro%20aku%20kate%20konsultasi" class="text-decoration-none text-dark">Hubungi Kami</a></button>
               </div>
             </div>
           </div>

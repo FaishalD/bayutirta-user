@@ -16,8 +16,13 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function articledetail()
+    public function articledetail(string $id)
     {
-        return view('articledetail');
+        $detail = Artikel::where('id_artikel', '=', $id)->first();
+        $artikel = Artikel::where('id_artikel', '!=', $id)->orderBy('created_at')->take(3)->get();
+        return view('articledetail',[
+            'detail' => $detail,
+            'artikel' => $artikel
+        ]);
     }
 }

@@ -15,7 +15,7 @@
         </div>
         <div class="col-xl-5">
           <div class="service-detail-desc">
-            <h5 class="title font-jakarta">Service Baterai</h5>
+            <h5 class="title font-jakarta">{{$detail->nama_layanan}}</h5>
             <div class="rating">
               <div class="star">
                 <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@
               </div>
               <p>4.5/5</p>
             </div>
-            <div class="price font-jakarta">Rp. 100.000 - Rp. 200.000 <span class="discount">-40%</span></div>
+            <div class="price font-jakarta">{{$detail->harga}} <span class="discount">-40%</span></div>
             <div class="list">
               <p>Layanan perbaikan ganti baterai </p>
               <ul>
@@ -94,14 +94,7 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div id="deskripsi" class="container tab-pane active"><br>
-              <p class="description-text font-jakarta">Kami menyediakan layanan baterai yang andal dan efisien untuk
-                memastikan
-                kendaraan atau perangkat
-                Anda selalu siap digunakan. Tim profesional kami siap membantu Anda mengatasi masalah baterai dengan
-                cepat dan efektif. Mulai dari pemeriksaan, penggantian, hingga perawatan, kami menawarkan solusi yang
-                tepat sesuai dengan kebutuhan Anda. Dengan menggunakan teknologi terbaru dan baterai berkualitas
-                tinggi, kami memastikan performa terbaik untuk kendaraan atau perangkat Anda. Percayakan pada layanan
-                kami untuk menjamin kinerja yang handal dan meningkatkan daya tahan baterai Anda.</p>
+              <p class="description-text font-jakarta">{{$detail->keterangan}}</p>
               <div class="details-brand">
                 <div class="desc">
                   <div class="original">
@@ -383,7 +376,7 @@
                   layanan kami. Tim kami akan melakukan observasi dan diagnosa kerusakan perangkatmu.</p>
               </div>
               <div class="button">
-                <button class="bg-purple text-white"><a href="{{ url('/#consultation') }}" class="text-decoration-none text-white">Hubungi Kami</a></button>
+                <button class="bg-purple text-white"><a href="https://wa.me/6282257423118?text=Halo%20bro%20aku%20kate%20konsultasi" class="text-decoration-none text-white">Hubungi Kami</a></button>
               </div>
             </div>
           </div>

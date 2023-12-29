@@ -16,8 +16,11 @@ class ServiceController extends Controller
             'layanan' => $layanans]);
     }
 
-    public function servicedetail()
+    public function servicedetail(string $id)
     {
-        return view('servicedetail');
+        $detail = Layanan::where('id_layanan', '=', $id)->first();
+        return view('servicedetail',[
+            'detail'=>$detail
+        ]);
     }
 }
