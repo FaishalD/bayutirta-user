@@ -105,7 +105,7 @@
                 <p class="font-jakarta">Gratis Diagnosa, konsultasi & reservasi dengan dukungan
                   pesan foto.</p>
               </div>
-              <button>Reservasi Sekarang</button>
+              <button><a class="button-link text-decoration-none text-light" aria-current="page" href="#consultation">Reservasi Sekarang</a></button> 
             </div>
           </div>
         </div>
@@ -240,7 +240,7 @@
             </div>
         @endif
         <div class="devices-button">
-          <button>Selengkapnya</button>
+          <button><a class="button-link text-decoration-none text-light" aria-current="page" href="/service">Selengkapnya</a></button> 
         </div>
 
       </div>
@@ -580,7 +580,7 @@
             </div>
         @endif
         <div class="devices-button">
-          <button>Selengkapnya</button>
+        <button><a class="button-link text-decoration-none text-light" aria-current="page" href="/article">Selengkapnya</a></button> 
         </div>
       </div>
     </div>
@@ -592,7 +592,7 @@
       <div class="row justify-content-lg-between">
         <div class="col-xl-5">
           <div class="consultation-title">
-            <h2 class="font-jakarta">Ragu dengan kerusakan? Konsultasikan Sekarang!</h2>
+            <h2 class="font-jakarta">Perbaiki Handphonemu dengan Reservasi layanan!</h2>
           </div>
           <div class="consultation-image">
             <img src="{{ url('images/form.png') }}" alt="phone">
