@@ -29,7 +29,7 @@
           @if (isset($artikel))
           @foreach ($artikel as $item)
           <div class="col-xl-4">
-          <a href="{{ url('/articledetail') }}" class="text-decoration-none">  <div class="card border-0 ">
+          <a href="{{ url("https://admin.bayutirta.masuk.id/public/images/$item->foto") }}" class="text-decoration-none">  <div class="card border-0 ">
             <img src="{{ url('images/devices1.png') }}" class="card-img-top" alt="devices">
             <div class="card-body p-0">
               <h5 class="card-title font-jakarta">{{$item->judul}}</h5>
