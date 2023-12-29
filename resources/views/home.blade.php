@@ -202,7 +202,7 @@
         @if (isset($layanan))
             @foreach ($layanan as $item)
             <div class="col-xl-4">
-                  <a href="{{ url('/servicedetail') }}" class="text-decoration-none">
+                  <a href="{{ url("/servicedetail/$item->id_layanan") }}" class="text-decoration-none">
                     <div class="part-card">
                       <div class="image">
                         <img src="{{ url('images/service2.png') }}" alt="part">
@@ -551,7 +551,7 @@
           @if (isset($artikel))
           @foreach ($artikel as $item)
           <div class="col-xl-4">
-          <a href="{{ url('/articledetail') }}" class="text-decoration-none">  <div class="card border-0 ">
+          <a href="{{ url("/articledetail/$item->id_artikel") }}" class="text-decoration-none">  <div class="card border-0 ">
             <img src="{{ url("https://admin.bayutirta.masuk.id/public/images/$item->foto") }}" class="card-img-top" alt="devices">
             <div class="card-body p-0">
               <h5 class="card-title font-jakarta">{{$item->judul}}</h5>

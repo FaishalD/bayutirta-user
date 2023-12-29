@@ -12,15 +12,15 @@
           article
         </span>
         <div class="desc">
-          <h5 class="text font-jakarta">Merawat HP agar Awet</h5>
+          <h5 class="text font-jakarta">{{$detail->judul}}</h5>
           <div class="user">
             <div class="profile">
               <div class="image">
                 <img src="{{ url('images/profiledev1.png') }}" alt="profile">
               </div>
               <div class="position">
-                <h5>Ralph Edwards</h5>
-                <p>5 min read</p>
+                <h5>{{$detail->nama_penulis}}</h5>
+                <p>{{$detail->title_penulis}}</p>
               </div>
             </div>
           </div>
@@ -29,14 +29,12 @@
       <div class="row">
         <div class="col-xl-12">
           <div class="article-detail-image">
-            <img src="{{ url('images/articledetail.png') }}" alt="detail">
+            <img src="{{ url("https://admin.bayutirta.masuk.id/public/images/$detail->foto") }}" alt="detail">
           </div>
           <div class="article-detail-desc">
-            <p class="font-jakarta">Merawat ponsel agar tetap awet dan berfungsi baik dalam jangka waktu yang lama
-              memerlukan beberapa
-              langkah sederhana namun penting. Berikut adalah beberapa tips untuk merawat ponsel Anda</p>
+            <p class="font-jakarta">{{$detail->isi}}</p>
           </div>
-          <div class="article-detail-list">
+          {{-- <div class="article-detail-list">
             <ol type="1">
               <li>
                 <div>
@@ -122,7 +120,7 @@
           <div class="article-detail-desc">
             <p class="font-jakarta">Dengan mengikuti tips ini, Anda dapat membantu memperpanjang umur ponsel Anda dan
               menjaganya agar tetap berfungsi dengan baik untuk waktu yang lebih lama.</p>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
@@ -141,28 +139,30 @@
       </div>
       <div class="devices-item m-0">
         <div class="row">
+          @if (isset($artikel))
+          @foreach ($artikel as $item)
           <div class="col-xl-4">
+            <a href="{{ url("/articledetail/$item->id_artikel") }}" class="text-decoration-none">
             <div class="card border-0 ">
-              <img src="{{ url('images/devices1.png') }}" class="card-img-top" alt="devices">
+              <img src="{{ url("https://admin.bayutirta.masuk.id/public/images/$item->foto") }}" class="card-img-top" alt="devices">
               <div class="card-body p-0">
-                <h5 class="card-title font-jakarta">Merawat HP agar Awet</h5>
-                <p class="card-text font-jakarta">Handphone menjadi alat yang wajib untuk dibawa kemana mana untuk
-                  saat ini,
-                  maka
-                  dari itu per...</p>
+                <h5 class="card-title font-jakarta">{{$item->judul}}</h5>
+                <p class="card-text font-jakarta">{{$item->isi}}</p>
               </div>
               <div class="card-profile">
                 <div class="image">
                   <img src="{{ url('images/profiledev1.png') }}" alt="profile">
                 </div>
                 <div class="position">
-                  <h5>Ralph Edwards</h5>
-                  <p>5 min read</p>
+                  <h5>{{$item->nama_penulis}}</h5>
+                  <p>{{$item->title_penulis}}</p>
                 </div>
               </div>
-            </div>
+            </div></a>
           </div>
-          <div class="col-xl-4">
+          @endforeach
+          @endif
+          {{-- <div class="col-xl-4">
             <div class="card border-0 ">
               <img src="{{ url('images/devices2.png') }}" class="card-img-top" alt="devices">
               <div class="card-body p-0">
@@ -203,7 +203,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
 
         </div>
       </div>
