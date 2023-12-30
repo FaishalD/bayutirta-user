@@ -613,6 +613,25 @@
               </div>
             </div>
             <div class="form mt-xl-4">
+              <label for="name">Alamat <span>*</span></label>
+              <div class="input">
+                <input type="text" name="alamat" placeholder="Masukkan alamat rumah kamu">
+              </div>
+            </div>
+            <div class="form mt-xl-4">
+              <label for="name">Layanan <span>*</span></label>
+                <div class="dropdown">
+                  <button class="btn btn-outline-info dropdown-toggle w-100 mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Pilih Layanan
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="form mt-xl-4">
               <label for="name">Merk HP <span>*</span></label>
               <div class="input">
                 <input type="text" name="merk_hp" placeholder="Tulis merk HP kamu">
