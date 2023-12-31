@@ -599,6 +599,8 @@
           </div>
         </div>
         <div class="col-xl-6">
+          <form action="/reservasi" method="POST">
+            {{ csrf_field() }}
           <div class="consultation-form">
             <div class="form">
               <label for="name">Nama <span>*</span></label>
@@ -621,14 +623,20 @@
             <div class="form mt-xl-4">
               <label for="name">Layanan <span>*</span></label>
                 <div class="dropdown">
-                  <button class="btn btn-outline-info dropdown-toggle w-100 mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{-- <button class="btn btn-outline-info dropdown-toggle w-100 mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Pilih Layanan
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
+                  </button> --}}
+                  <select class="form-select" name="layanan" aria-label="Default select example">
+                    <option selected>Pilih Layanan</option>
+                    @foreach ($pilihan as $item)
+                    <option value="{{$item->nama_layanan}}">{{$item->nama_layanan}}</option>
+                    @endforeach
+                  </select>
+                  {{-- <ul class="dropdown-menu">
+                    
+                    <li>{{$item->nama_layanan}}</li>
+                    
+                  </ul> --}}
                 </div>
             </div>
             <div class="form mt-xl-4">
@@ -646,7 +654,7 @@
             <div class="form-file mt-xl-4">
               <label for="name">Upload foto / video pendukung <span>*</span></label>
               <div class="box">
-                <input type="file" name="file-5[]" id="file-5" class="inputfile inputfile-4"
+                <input type="file" name="foto" id="file-5" class="inputfile inputfile-4"
                   data-multiple-caption="{count} files selected" multiple />
                 <label for="file-5">
                   <figure class="text-xl-center"><img src="{{ url('images/copas.png') }}" alt=""></figure>
@@ -659,6 +667,7 @@
               <button>Kirim</button>
             </div>
           </div>
+        </form>
         </div>
       </div>
     </div>

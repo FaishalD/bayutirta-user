@@ -11,7 +11,7 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $layanans = Layanan::all();
+        $layanans = Layanan::where('status', '=', 1)->get();
         return view('service',[
             'layanan' => $layanans]);
     }

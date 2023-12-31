@@ -14,6 +14,7 @@ class Reservasi extends Model
         'alamat',
         'merk_hp',
         'keterangan',
+        'foto',
         'status',
         'created_at',
         'updated_at'
