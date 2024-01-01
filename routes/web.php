@@ -21,3 +21,5 @@ Route::get('/service', [ServiceController::class, 'index']);
 Route::get('/servicedetail/{id}', [ServiceController::class, 'serviceDetail']);
 Route::get('/article', [ArticleController::class, 'index']);
 Route::get('/articledetail/{id}', [ArticleController::class, 'articleDetail']);
+
+Route::post('/reservasi', [Controller::class, 'addReservasi']);
